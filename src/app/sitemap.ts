@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { getAllPosts } from "@/lib/posts";
 
-const baseUrl = "https://blog-lab.example.com";
+const baseUrl = "https://blog-lab-two.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts().map((post) => ({

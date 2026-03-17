@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description:
     "클라우드 컴퓨팅을 배우는 학생이 리눅스, 배포, 클라우드 운영을 단계적으로 연습하는 Next.js 블로그입니다.",
-  metadataBase: new URL("https://blog-lab.example.com"),
+  metadataBase: new URL("https://blog-lab-two.vercel.app"),
 };
 
 export default function RootLayout({
