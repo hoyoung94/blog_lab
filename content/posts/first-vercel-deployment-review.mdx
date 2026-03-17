@@ -18,7 +18,17 @@ tags:
 
 배포가 완료된 뒤 Vercel 대시보드에서 `Production Deployment` 상태가 초록색으로 표시되고, 배포 주소가 링크로 보이는 화면을 보았을 때 작은 프로젝트라도 실제 서비스처럼 느껴졌습니다. 로컬에서만 보던 블로그가 브라우저 주소창에 공개 URL을 가지고 있다는 사실이 꽤 인상적이었습니다.
 
+<figure>
+  <img src="/images/posts/first-vercel-deployment-review/vercel-dashboard.png" alt="Vercel 대시보드에서 Production Deployment가 성공한 화면" />
+  <figcaption>첫 배포가 끝난 뒤 Vercel 대시보드에서 확인한 Production Deployment 화면</figcaption>
+</figure>
+
 브라우저에서 홈 화면을 열었을 때는 내가 수정한 한글 문구와 글 목록이 실제 인터넷 주소에서 그대로 보였습니다. 특히 글 목록 페이지와 소개 페이지가 문제 없이 열리고, `robots.txt`와 `sitemap.xml`까지 접근된다는 점을 확인하면서 단순히 화면만 보이는 것이 아니라 배포용 설정도 함께 중요하다는 것을 체감했습니다.
+
+<figure>
+  <img src="/images/posts/first-vercel-deployment-review/production-site.png" alt="실제 배포된 blog_lab 메인 화면" />
+  <figcaption>실제 Production URL에서 열린 블로그 화면. 로컬에서 만든 결과물이 인터넷에 그대로 반영된 모습이다.</figcaption>
+</figure>
 
 > 이번 첫 배포는 "화면을 띄웠다"는 의미를 넘어서, GitHub와 Vercel이 연결된 실제 배포 파이프라인을 처음 경험했다는 점에서 의미가 컸습니다.
 
@@ -34,6 +44,6 @@ tags:
 
 ## 다음에 해볼 것
 
-- Vercel 대시보드와 실제 배포 화면 스크린샷 추가
 - `Preview Deployment`와 `Production Deployment` 차이 정리
 - Ubuntu 서버에서 같은 프로젝트를 직접 띄워 보기
+- 배포 후기 글에 코드 블록이나 체크리스트 같은 MDX 요소 더 활용해 보기
