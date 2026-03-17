@@ -4,8 +4,8 @@ import { getAllPosts } from "@/lib/posts";
 
 const baseUrl = "https://blog-lab-two.vercel.app";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPosts().map((post) => ({
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = (await getAllPosts()).map((post) => ({
     url: `${baseUrl}/posts/${post.slug}`,
     lastModified: post.publishedAt,
   }));

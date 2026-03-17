@@ -10,8 +10,8 @@ const practiceAreas = [
   "정적 블로그를 클라우드 실습 프로젝트로 확장하기",
 ];
 
-export default function HomePage() {
-  const featuredPosts = getFeaturedPosts();
+export default async function HomePage() {
+  const featuredPosts = await getFeaturedPosts();
 
   return (
     <div className="container page-stack">

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 import { formatDate } from "@/lib/posts";
-import type { Post } from "@/data/posts";
+import type { PostSummary } from "@/lib/posts";
 
 type PostCardProps = {
-  post: Post;
+  post: PostSummary;
 };
 
 export function PostCard({ post }: PostCardProps) {

@@ -10,15 +10,17 @@ type PostPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return getAllPosts().map((post) => ({
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -64,11 +66,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         </header>
 
-        <div className="prose-shell">
-          {post.content.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <div className="prose-shell">{post.content}</div>
       </article>
     </div>
   );
