@@ -11,6 +11,21 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "first-vercel-deployment-review",
+    title: "첫 Vercel 배포 후기: GitHub 연결부터 실제 URL 반영까지",
+    excerpt:
+      "처음 Vercel에 가입하고 GitHub 저장소를 연결해 배포한 뒤, 실제 배포 주소를 메타데이터와 sitemap에 반영하면서 배운 점을 정리했습니다.",
+    publishedAt: "2026-03-17",
+    readingTime: "4분 읽기",
+    featured: true,
+    tags: ["Vercel", "배포", "회고"],
+    content: [
+      "이번 배포 경험에서 가장 좋았던 점은 GitHub와 연결된 프로젝트가 얼마나 빠르게 인터넷에 올라가는지 직접 확인할 수 있었다는 것입니다. 코드를 푸시하고 잠시 기다리니 실제로 접근 가능한 블로그 주소가 생겼고, 배포가 더 이상 막연한 개념이 아니라는 느낌을 받았습니다.",
+      "처음에는 Vercel 로그인 과정에서 Social Account 관련 메시지가 나와 조금 헷갈렸지만, GitHub 계정으로 새 Vercel 계정을 만드는 흐름이라는 것을 이해하고 나니 해결할 수 있었습니다. 그다음에는 GitHub 저장소를 가져와 배포하는 과정이 예상보다 단순해서 초보자에게 좋은 시작점이라는 생각이 들었습니다.",
+      "배포가 끝난 뒤에는 단순히 화면이 보이는 것에서 끝내지 않고, 실제 배포 URL을 프로젝트 코드에도 반영했습니다. metadataBase, sitemap, robots 설정을 실제 주소에 맞추면서 검색 엔진과 배포 환경을 함께 생각해야 한다는 점을 배웠고, 앞으로는 이 경험을 바탕으로 Ubuntu 서버 배포와 AWS까지 이어서 연습해 보고 싶습니다."
+    ]
+  },
+  {
     slug: "why-this-blog-exists",
     title: "이 블로그를 클라우드 실습장으로 만드는 이유",
     excerpt:
