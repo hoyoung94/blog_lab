@@ -37,6 +37,10 @@ cmd /c npm run dev
 
 하루 단위 일정은 `docs/week1-checklist.md`에 정리해 두었습니다.
 
+## Ubuntu 서버 배포
+
+`PM2 + Nginx` 기준 실습 문서는 `docs/ubuntu-deploy.md`에 정리해 두었습니다.
+
 ## 새 글 추가 방법
 
 1. `content/posts` 폴더에 `my-post.mdx` 파일을 만듭니다.
