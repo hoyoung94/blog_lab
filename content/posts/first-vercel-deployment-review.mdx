@@ -2,7 +2,7 @@
 title: "첫 Vercel 배포 후기: GitHub 연결부터 실제 URL 반영까지"
 excerpt: "처음 Vercel에 가입하고 GitHub 저장소를 연결해 배포한 뒤, 실제 배포 주소를 메타데이터와 sitemap에 반영하면서 배운 점을 정리했습니다."
 publishedAt: "2026-03-17"
-readingTime: "6분 읽기"
+readingTime: "7분 읽기"
 featured: true
 tags:
   - Vercel
@@ -36,6 +36,39 @@ tags:
 
 배포가 끝난 뒤에는 단순히 화면이 보이는 것에서 끝내지 않고, 실제 배포 URL을 프로젝트 코드에도 반영했습니다. `metadataBase`, `sitemap`, `robots` 설정을 실제 주소에 맞추면서 검색 엔진과 배포 환경을 함께 생각해야 한다는 점을 배웠고, 앞으로는 이 경험을 바탕으로 Ubuntu 서버 배포와 AWS까지 이어서 연습해 보고 싶습니다.
 
+## 실제로 사용한 명령
+
+처음 GitHub 저장소를 연결하고 메인 브랜치를 올릴 때는 아래 흐름을 사용했습니다.
+
+```bash
+git remote add origin https://github.com/hoyoung94/blog_lab.git
+git push -u origin main
+```
+
+그다음 실제 Vercel 주소를 코드에 반영하고 다시 배포할 때는 아래처럼 커밋과 푸시를 진행했습니다.
+
+```bash
+git add src/app/layout.tsx src/app/sitemap.ts src/app/robots.ts
+git commit -m "Vercel 배포 URL 반영"
+git push
+```
+
+## 배포 후 수정한 코드
+
+특히 아래 두 부분은 "사이트가 열리는가"와는 별개로, 배포 환경을 더 완성도 있게 만들기 위해 중요했습니다.
+
+```ts
+export const metadata = {
+  metadataBase: new URL("https://blog-lab-two.vercel.app"),
+};
+```
+
+```ts
+const baseUrl = "https://blog-lab-two.vercel.app";
+```
+
+이렇게 맞춰 두면 `sitemap.xml`, `robots.txt`, 그리고 메타데이터가 실제 프로덕션 주소를 기준으로 동작합니다.
+
 ## 배운 점 세 가지
 
 1. GitHub와 Vercel을 연결하면 배포 과정이 훨씬 단순해진다는 점을 배웠습니다. 직접 서버에 올리지 않아도 저장소를 기준으로 배포가 자동으로 이어지기 때문에, 초보자가 배포 흐름을 처음 익히기에 부담이 적었습니다.
@@ -44,6 +77,6 @@ tags:
 
 ## 다음에 해볼 것
 
-- `Preview Deployment`와 `Production Deployment` 차이 정리
 - Ubuntu 서버에서 같은 프로젝트를 직접 띄워 보기
 - 배포 후기 글에 코드 블록이나 체크리스트 같은 MDX 요소 더 활용해 보기
+- Vercel 환경변수와 도메인 연결까지 직접 경험해 보기
