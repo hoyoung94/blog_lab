@@ -25,6 +25,10 @@ export default async function HomePage() {
             보는 것이 목표입니다.
           </p>
 
+          <p className="hero-status">
+            실습 업데이트: VMware Ubuntu 환경에서 PM2와 Nginx를 이용한 첫 서버 배포를 완료했습니다.
+          </p>
+
           <div className="button-row">
             <Link href="/blog" className="button">
               학습 글 보기

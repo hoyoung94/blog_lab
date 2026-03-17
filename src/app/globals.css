@@ -191,6 +191,20 @@ main {
   color: var(--muted);
 }
 
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0.4rem 0 0;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(202, 95, 46, 0.2);
+  background: rgba(255, 246, 232, 0.95);
+  color: var(--accent-strong);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .eyebrow {
   margin: 0 0 0.85rem;
   font-size: 0.86rem;
